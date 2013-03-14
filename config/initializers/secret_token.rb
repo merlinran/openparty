@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-OpenParty::Application.config.secret_token = 'f4f27e85dc31a3f72cd33faf3df44ec21205e9445c240a754933c47e1abe06d1d65da2b63b401ac0d6534aa98dd6348889630da8664f7772fb7b8b012e647b6e'
+OpenParty::Application.config.secret_token = '1e4763b61b3b3e3bf06e04773ad69ffa984599bbdbe62fbe07895c78c7427ca27262feb73cd40555b4c3736e24157091cc1c6f5d615f9de12b83c0ab1fa19c31'

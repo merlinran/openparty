@@ -1,31 +1,21 @@
 <h1>Listing events</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Hold date</th>
-    <th>Location</th>
-    <th>Poster url</th>
-    <th>Detail</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @events.each do |event| %>
-  <tr>
-    <td><%= event.name %></td>
-    <td><%= event.hold_date %></td>
-    <td><%= event.location %></td>
-    <td><%= event.poster_url %></td>
-    <td><%= event.detail %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <% @events.each do |event| %>
+    <tr>
+      <td><%= image_tag(event.poster_url) %></td>
+      <td>
+        <ul>
+          <li><%= link_to event.name, event %></li>
+          <li><%= event.hold_at %></li>
+          <li><%= event.location %></li>
+          <li><%= truncate(event.detail, length: 80, seperator: ' ') %></li>
+        </ul>
+      </tr>
+    <% end %>
+  </table>
 
-<br />
+  <br />
 
-<%= link_to 'New Event', new_event_path %>
+  <%= link_to 'New Event', new_event_path %>

@@ -1,0 +1,17 @@
+<%= form_for([@event, @event.enrolments.build], remote: true) do |f| %>
+  <div class="field">
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+   <div class="field">
+    <%= f.label :comment %><br />
+    <%= f.text_field :comment %>
+  </div>
+ <div class="actions">
+    <%= f.submit '报名' %>
+  </div>
+<% end %>
