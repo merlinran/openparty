@@ -1,5 +1,5 @@
 <% if @enrolment.errors.empty? %>
-  $('<%= escape_javascript(render :partial => 'enrolment', :object => @enrolment) %>').hide().appendTo($('#enrolments')).fadeIn('fast').css('display', 'table-row');
+  $('<%= escape_javascript(render @enrolment) %>').appendTo($('#enrolments'));
 <% else %>
   $('<span class="error-message"><%= escape_javascript(@enrolment.errors.full_messages.join(',')) %></span>').appendTo($('#new_enrolment_form'))
 <% end %>
