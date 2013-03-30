@@ -1,4 +1,11 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+section p img {
+  float: left;
+  padding: 5px;
+};
 
+#new_event_button {
+  clear: left;
+}

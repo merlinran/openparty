@@ -1,21 +1,3 @@
-<h1>Listing events</h1>
+<%= render collection: @events, partial: 'event_brief', as: :event %>
 
-<table>
-
-  <% @events.each do |event| %>
-    <tr>
-      <td><%= image_tag(event.poster_url) %></td>
-      <td>
-        <ul>
-          <li><%= link_to event.name, event %></li>
-          <li><%= event.hold_at %></li>
-          <li><%= event.location %></li>
-          <li><%= truncate(event.detail, length: 80, seperator: ' ') %></li>
-        </ul>
-      </tr>
-    <% end %>
-  </table>
-
-  <br />
-
-  <%= link_to 'New Event', new_event_path %>
+<%= link_to 'New Event', new_event_path, id: "new_event_button" %>

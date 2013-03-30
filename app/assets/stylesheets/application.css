@@ -12,3 +12,27 @@
  *= require_tree .
  *= require jquery.ui.datepicker
 */
+header {
+  padding: 5px;
+}
+
+nav {
+  overflow: auto;
+  background-color: hsl(200,30%,80%);
+}
+
+nav li {
+  list-style-type: none;
+}
+
+nav li a {
+  float: left;
+  font-size: 2em;
+  padding: .5em;
+  text-decoration: none;
+}
+
+article {
+  clear: left;
+}
+
