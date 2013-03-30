@@ -11,10 +11,16 @@ section {
   border-top: solid red 2px;
 };
 
-.past_event, .pending_event {
+.event {
   margin: 10px 5px 5px 0;
   float: left;
 };
+
+.event:hover {
+}
+
+.event:active {
+}
 
 .pending_event img {
   float: left;

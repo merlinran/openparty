@@ -1,9 +1,10 @@
-<div class="pending_event">
+<div class="pending_event event">
   <%= image_tag(event.poster_url) %>
   <div class="event_brief">
     <h1><%= link_to event.name, event %></h1>
     <p><%= event.hold_date %></p>
     <p><%= event.location %></p>
     <p><%= truncate(event.detail, length: 80, seperator: ' ') %></p>
+    <p><%= link_to event.enrolments.count, event_path(event, anchor:"enrolments") %>人报名，已提交<%= link_to event.sessions.count, event_path(event, anchor:"sessions") %>个话题。</p>
   </div>
 </div>
