@@ -1,6 +1,6 @@
-class CreateSessions < ActiveRecord::Migration
+class CreateTopics < ActiveRecord::Migration
   def change
-    create_table :sessions do |t|
+    create_table :topics do |t|
       t.string :name
       t.string :submitter
       t.string :poster_url

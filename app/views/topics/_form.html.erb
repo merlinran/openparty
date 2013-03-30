@@ -1,4 +1,4 @@
-<%= form_for([@event, @event.sessions.build], remote: true) do |f| %>
+<%= form_for([@event, @event.topics.build], remote: true) do |f| %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>

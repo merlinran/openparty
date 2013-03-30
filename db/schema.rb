@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20130330091220) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "sessions", :force => true do |t|
+  create_table "topics", :force => true do |t|
     t.string   "name"
     t.string   "submitter"
     t.string   "poster_url"

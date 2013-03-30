@@ -11,7 +11,7 @@
  *= require_self
  *= require_tree .
  *= require jquery.ui.datepicker
-*/
+ */
 
 * {
   box-sizing: border-box;
@@ -59,3 +59,39 @@ footer {
   text-align: center;
 }
 
+/* remove the list style */
+#login_menu {
+  margin:0; 
+  padding:0; 
+  list-style:none;
+  width: 100px;
+  float: right;
+} 
+
+/* submenu, it's hidden by default */
+#login_menu {
+  position:absolute; 
+  left:0; 
+  display:none; 
+  margin:0 0 0 -1px; 
+  padding:0; 
+  list-style:none;
+}
+
+#login_menu li {
+  width:100px; 
+  float:left; 
+  border-top:1px solid #fff;
+}
+
+/* display block will make the link fill the whole area of LI */
+#login_menu a {
+  display:block;  
+  height:15px;
+  padding: 8px 5px; 
+  color:#666;
+}
+
+#login_menu a:hover {
+  text-decoration:underline;  
+}

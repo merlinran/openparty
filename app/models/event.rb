@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   has_many :enrolments;
-  has_many :sessions;
+  has_many :topics;
 
   def self.past_events
     self.where("hold_date < ?", Date.today).order("hold_date DESC");

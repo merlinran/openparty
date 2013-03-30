@@ -1,14 +1,14 @@
 class SessionsController < ApplicationController
   def create
-    @event = Event.find(params[:event_id])
-    @session = @event.sessions.new(params[:session])
-    respond_to do |format|
-      if @session.save
-        format.js
-        format.html
-      else
-        format.js
-      end
-    end
+    y auth_hash
+    #@user = User.find_or_create_from_auth_hash(auth_hash)
+    #self.current_user = @user
+    #redirect_to '/'
+  end
+
+  protected
+
+  def auth_hash
+    request.env['omniauth.auth']
   end
 end

@@ -1,0 +1,5 @@
+<% if @topic.errors.empty? %>
+  $('<%= escape_javascript(render @topic) %>').appendTo($('#topics'));
+<% else %>
+  $('<span class="error-message"><%= escape_javascript(@topic.errors.full_messages.join(',')) %></span>').appendTo($('#new_topic_form'))
+<% end %>

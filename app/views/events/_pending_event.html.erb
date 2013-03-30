@@ -5,6 +5,6 @@
     <p><%= event.hold_date %></p>
     <p><%= event.location %></p>
     <p><%= truncate(event.detail, length: 80, seperator: ' ') %></p>
-    <p><%= link_to event.enrolments.count, event_path(event, anchor:"enrolments") %>人报名，已提交<%= link_to event.sessions.count, event_path(event, anchor:"sessions") %>个话题。</p>
+    <p><%= link_to event.enrolments.count, event_path(event, anchor:"enrolments") %>人报名，已提交<%= link_to event.topics.count, event_path(event, anchor:"topics") %>个话题。</p>
   </div>
 </div>

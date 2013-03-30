@@ -1,0 +1,16 @@
+--- 
+applications: 
+  .: 
+    name: cqop
+    framework: 
+      name: rails3
+      info: 
+        mem: 256M
+        description: Rails Application
+        exec: 
+    url: ${name}.${target-base}
+    mem: 256M
+    instances: 1
+    services: 
+      cqop: 
+        type: mysql
