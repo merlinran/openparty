@@ -13,8 +13,13 @@
  *= require jquery.ui.datepicker
 */
 
+* {
+  box-sizing: border-box;
+}
+
 div#wrapper {
-  width: 80%;
+  width: 90%;
+  max-width: 1200px;
   min-width: 640px;
   position: relative;
   margin: 0 auto;
@@ -39,17 +44,17 @@ nav li a, aside li a {
   text-decoration: none;
 }
 
-section {
-  clear: both;
+article img {
+  box-shadow: 6px 6px 6px silver;
 }
 
 aside {
   position: fixed;
-  position-top: -200px;
+  top: 200px;
 }
 
 footer {
-  padding-top: 5em;
+  padding-top: 50px;
   clear: both;
   text-align: center;
 }

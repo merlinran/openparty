@@ -1,6 +1,7 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 section {
   overflow: auto;
 };
@@ -8,7 +9,6 @@ section {
 #past_events {
   margin-top: 2em;
   border-top: solid red 2px;
-  clear: both;
 };
 
 .past_event, .pending_event {
@@ -18,13 +18,20 @@ section {
 
 .pending_event img {
   float: left;
-  padding-right: 20px;
+  width: 60%;
 };
 
-.event_brief {
+.pending_event .event_brief {
+  float: left;
   width: 30%;
+  margin-left: 2em;
 }
 
-.event_location_map {
-  float: right;
-};
+.past_event {
+  width: 24%;
+  padding: 0 5px;
+}
+
+.past_event img {
+  width: 100%;
+}
