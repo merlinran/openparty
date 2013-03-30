@@ -1,0 +1,8 @@
+<section class="<%= event.held? ? 'past_event' : 'current_event' %>" >
+<p><%= image_tag(event.poster_url) %></p>
+<h1><%= link_to event.name, event %></h1>
+<p><%= event.hold_at %></p>
+<p><%= event.location %></p>
+<p><%= truncate(event.detail, length: 80, seperator: ' ') %></p>
+</section>
+
