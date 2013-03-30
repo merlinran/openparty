@@ -1,6 +1,9 @@
 OpenParty::Application.routes.draw do
+  get "sessions/create"
+
   resources :events, :except => :destroy do
     resources :enrolments
+    resources :sessions
   end
 
   # The priority is based upon order of creation:

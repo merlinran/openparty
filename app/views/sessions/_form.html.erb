@@ -1,0 +1,25 @@
+<%= form_for([@event, @event.sessions.build], remote: true) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :submitter %><br />
+    <%= f.text_field :submitter %>
+  </div>
+  <div class="field">
+    <%= f.label :poster_url %><br />
+    <%= f.text_field :poster_url %>
+  </div>
+  <div class="field">
+    <%= f.label :estimated_minutes %><br />
+    <%= f.text_field :estimated_minutes %>
+  </div>
+  <div class="field">
+    <%= f.label :detail %><br />
+    <%= f.text_area :detail %>
+  </div>
+  <div class="actions">
+    <%= f.submit '提交话题' %>
+  </div>
+<% end %>

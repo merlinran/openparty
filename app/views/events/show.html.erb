@@ -19,10 +19,14 @@
 </p>
 <div id="enrolments">
   <%= render @event.enrolments %>
-</div>
-<div id="new_enrolment_form">
-  <%= render 'enrolments/form' %>
+  <div id="new_enrolment_form">
+    <%= render 'enrolments/form' %>
+  </div>
 </div>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<div id="sessions">
+  <%= render @event.sessions %>
+  <div id="new_session_form">
+    <%= render 'sessions/form' %>
+  </div>
+</div>
