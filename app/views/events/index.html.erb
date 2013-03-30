@@ -1,21 +1,8 @@
-<%= render collection: @events, partial: 'event_brief', as: :event %>
+<section id="pending_events">
+<%= render collection: @pending_events, partial: 'pending_event', as: :event %>
+</section>
 
-<table>
-
-  <% @events.each do |event| %>
-    <tr>
-      <td><%= image_tag(event.poster_url) %></td>
-      <td>
-        <ul>
-          <li><%= link_to event.name, event %></li>
-          <li><%= event.hold_date %></li>
-          <li><%= event.location %></li>
-          <li><%= truncate(event.detail, length: 80, seperator: ' ') %></li>
-        </ul>
-      </tr>
-    <% end %>
-  </table>
-
-  <br />
-
-<%= link_to 'New Event', new_event_path, id: "new_event_button" %>
+<section id="past_events">
+  <h2>往期活动</h2>
+  <%= render collection: @past_events, partial: 'past_event', as: :event %>
+</section>

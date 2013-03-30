@@ -2,7 +2,8 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
   def index
-    @events = Event.all
+    @pending_events = Event.pending_events;
+    @past_events = Event.past_events;
 
     respond_to do |format|
       format.html # index.html.erb

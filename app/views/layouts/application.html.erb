@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>重庆Open Party</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
+
   <body>
-    <header>
-    <hgroup>
-    <h1><a href="/">重庆Open Party</a></h1>
-    <p>Open Party，本着自由、开放、分享、互动的宗旨，采用“非会议（Unconference）”的形式，为参与者提供一个平等、自由的分享与获取知识的平台。
-      无分行业、领域、年龄，只要有一颗乐于分享，热情求知的心，您就是我们的一员。</p>
-    </hgroup>
-    </header>
-    <nav>
-    <ul>
-      <li><a href="/">首页</a></li>
-      <li><a href="/events">活动</a></li>
-      <li><a href="/records">记录</a></li>
-      <li><a href="/contact">联系</a></li>
-      <li><a href="/about">关于</a></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    </nav>
-    <article>
-    <%= yield %>
-    </article>
+    <div id="wrapper">
+
+      <header>
+      <hgroup>
+      <h1><a href="/">重庆Open Party</a></h1>
+      <p>Open Party，本着自由、开放、分享、互动的宗旨，采用“非会议（Unconference）”的形式，为参与者提供一个平等、自由的分享与获取知识的平台。
+        无分行业、领域、年龄，只要有一颗乐于分享，热情求知的心，您就是我们的一员。</p>
+      </hgroup>
+      </header>
+
+      <nav>
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="/events">活动</a></li>
+        <li><a href="/records">记录</a></li>
+        <li><a href="/contact">联系</a></li>
+        <li><a href="/about">关于</a></li>
+      </ul>
+      </nav>
+
+      <article>
+      <%= yield %>
+      </article>
+
+    </div>
+
     <aside>
+    <ul>
+      <li><a href="#">新浪微博</a></li>
+      <li><a href="#">豆瓣小站</a></li>
+    </ul>
     </aside>
+
     <footer>
+    <p>
+      本网站由<a href="http://mindhiking.info/">Merlin Ran</a>基于<a href="http://rubyonrails.org/">Ruby on Rails</a>创建
+    </p>
     </footer>
 
   </body>

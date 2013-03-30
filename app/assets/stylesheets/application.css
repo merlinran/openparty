@@ -12,8 +12,15 @@
  *= require_tree .
  *= require jquery.ui.datepicker
 */
+
+div#wrapper {
+  width: 80%;
+  min-width: 640px;
+  position: relative;
+  margin: 0 auto;
+}
+
 header {
-  padding: 5px;
 }
 
 nav {
@@ -21,18 +28,29 @@ nav {
   background-color: hsl(200,30%,80%);
 }
 
-nav li {
+nav li, aside li {
   list-style-type: none;
 }
 
-nav li a {
+nav li a, aside li a {
   float: left;
   font-size: 2em;
   padding: .5em;
   text-decoration: none;
 }
 
-article {
-  clear: left;
+section {
+  clear: both;
+}
+
+aside {
+  position: fixed;
+  position-top: -200px;
+}
+
+footer {
+  padding-top: 5em;
+  clear: both;
+  text-align: center;
 }
 

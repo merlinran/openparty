@@ -1,0 +1,8 @@
+<div class="past_event">
+  <%= image_tag(event.poster_url) %>
+  <div class="event_brief">
+    <h1><%= link_to event.name, event %></h1>
+    <p><%= event.hold_date %></p>
+    <p><%= event.location %></p>
+  </div>
+</div>

@@ -1,16 +1,12 @@
 class Event < ActiveRecord::Base
   has_many :enrolments
 
-  def held?
-    self.hold_at < Date.today();
-  end
-
   def self.past_events
-    self.where(held?: true)
+    self.where("hold_date < ?", Date.today).order("hold_date DESC");
   end
 
-  def self.current_events
-    self.where(held?: false)
+  def self.pending_events
+    self.where("hold_date >= ?", Date.today).order("hold_date DESC");
   end
 
 end
