@@ -11,25 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130313034616) do
+ActiveRecord::Schema.define(:version => 20130314083355) do
 
   create_table "enrolments", :force => true do |t|
     t.string   "nickname"
     t.string   "email"
     t.string   "comment"
     t.integer  "event_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "events", :force => true do |t|
     t.string   "name"
-    t.date     "hold_at"
+    t.date     "hold_date"
     t.string   "location"
     t.string   "poster_url"
     t.text     "detail"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
