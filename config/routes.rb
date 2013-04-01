@@ -1,14 +1,13 @@
 OpenParty::Application.routes.draw do
-  get "sessions/create"
-
-  get "topics/create"
 
   resources :events, :except => :destroy do
     resources :enrolments
     resources :topics
   end
 
-  match '/auth/:provider/callback', to: 'sessions#create'
+  resources :users, :only => [:new, :create]
+
+  match "/auth/:provider/callback", to: "sessions#create"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

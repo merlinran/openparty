@@ -44,10 +44,18 @@ section {
 
 #enrolments {
   float: left;
-  width: 30%;
+  width: 20%;
 }
 
-#sessions {
-  float: left;
-  width: 65%;
+#topics {
+  float: right;
+  width: 75%;
+}
+
+#new_enrolment_form {
+  display: none;
+}
+
+#new_topic_form {
+  display: none;
 }

@@ -33,6 +33,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 gem "omniauth-oauth2"
+gem "omniauth-github"
 gem 'omniauth-weibo-oauth2'
 gem "omniauth-google-oauth2"
 #gem 'omniauth-qq'
@@ -50,4 +51,4 @@ gem "omniauth-google-oauth2"
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'ruby-debug19', :require => 'ruby-debug'
