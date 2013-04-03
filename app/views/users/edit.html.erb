@@ -1,1 +1,35 @@
-<%= render "form" %>
+<%= form_for(@user) do |f| %>
+  <% if @user && @user.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this account from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :name, "用户名" %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email, "电子邮箱" %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :avatar_url %><br />
+    <%= f.text_field :avatar_url %>
+  </div>
+  <div class="field">
+    <%= f.label :password, "密码" %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation , "再输入一次密码" %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="actions"><%= f.submit "更新" %></div>
+  <%= link_to '删除用户', user_path, method: :delete%>
+<% end %>
