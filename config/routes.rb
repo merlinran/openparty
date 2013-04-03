@@ -5,9 +5,13 @@ OpenParty::Application.routes.draw do
     resources :topics
   end
 
-  resources :users, :only => [:new, :create]
-
   match "/auth/:provider/callback", to: "sessions#create"
+  match "/auth/failure", to: "sessions#new"
+  get "/login", to: "sessions#new", as: :login
+  get "/logout", to: "sessions#destroy", as: :logout
+
+  resource :user, :only => [:edit, :update, :destroy]
+  get "/signup", to: "identities#new", as: :signup
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -13,8 +13,16 @@ gem 'rails', '>=3.2.13'
 group :development, :test do
   gem 'sqlite3'
 end
+
+group :development do
+  gem 'debugger'
+#  gem 'linecache19'
+#  gem 'ruby-debug-base19x'
+#  gem 'ruby-debug19', :require => 'ruby-debug'
+end
+
 group :production do
-    gem 'mysql2'
+  gem 'mysql2'
 end
 
 # Gems used only for assets and not required
@@ -32,14 +40,12 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
-gem "omniauth-oauth2"
 gem "omniauth-github"
-gem 'omniauth-weibo-oauth2'
 gem "omniauth-google-oauth2"
-#gem 'omniauth-qq'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'omniauth-weibo-oauth2'
+gem 'omniauth-qq-connect'
+gem 'omniauth-identity'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
@@ -50,5 +56,3 @@ gem "omniauth-google-oauth2"
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-gem 'ruby-debug19', :require => 'ruby-debug'

@@ -16,18 +16,9 @@
 //= require jquery.ui.datepicker
 //= require jquery.ui.datepicker-zh-CN
 $(function() {
-    $('.datepicker').datepicker();
-});
+  $('img').each(function(){ this.title = this.alt; });
 
-$(document).ready(function () {	
-	$('#nav li').hover(
-		function () {
-			//show its submenu
-			$('ul', this).stop().slideDown(100);
-		}, 
-		function () {
-			//hide its submenu
-			$('ul', this).stop().slideUp(100);			
-		}
-	);
+  $('.datepicker').datepicker();
+
+  $('#userNav').hover(function(){ $('#userMenu').slideToggle(5); });
 });
