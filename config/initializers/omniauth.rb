@@ -1,8 +1,8 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :developer unless Rails.env.production?
-  provider :identity, fields: [:name, :email],
+  provider :identity, fields: [:name, :email], model: User,
     on_failed_registration: lambda { |env|
-      IdentitiesController.action(:new).call(env)
+      UsersController.action(:new).call(env)
     }
 
   OmniAuth.config.on_failure = Proc.new { |env|

@@ -4,7 +4,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.from_auth(auth_hash)
+    if auth_hash[:provider] == "identity"
+      user = User.find(auth_hash[:uid])
+    else
+      user = User.from_auth(auth_hash)
+    end
     session[:user_id] = user.id
     redirect_to root_url
   end

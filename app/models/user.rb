@@ -1,10 +1,13 @@
-class User < ActiveRecord::Base
-  attr_accessible :name, :email, :avatar_url, :authentications_attributes
+class User < OmniAuth::Identity::Models::ActiveRecord
+  attr_accessible :name, :email, :password, :password_confirmation, :avatar_url, :authentications_attributes
   has_many :authentications, :dependent => :delete_all
   accepts_nested_attributes_for :authentications
 
+  auth_key :name
+
   validates :name, :presence => true, :uniqueness => true
   validates :email, :uniqueness => true
+  #validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :alow_blank => true
   validates :avatar_url, :format => { 
     :with => %r{\.(gif|jpg|png)$}i,
     :message => 'must be a URL for GIF, JPG or PNG image.'
@@ -41,7 +44,8 @@ class User < ActiveRecord::Base
         user = create!(
           :name => auth[:info][:name],
           :email => auth[:info][:email],
-          :avatar_url => auth[:info][:image])
+          :avatar_url => auth[:info][:image],
+          :password => rand(36**10).to_s(36))
 
           user.authentications.create(
             :provider => auth[:provider],

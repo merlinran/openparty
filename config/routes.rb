@@ -11,7 +11,7 @@ OpenParty::Application.routes.draw do
   get "/logout", to: "sessions#destroy", as: :logout
 
   resource :user, :only => [:edit, :update, :destroy]
-  get "/signup", to: "identities#new", as: :signup
+  get "/signup", to: "users#new", as: :signup
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
