@@ -1,10 +1,17 @@
 <div class="pending_event event">
-  <%= image_tag(event.poster_url) %>
+  <%= image_tag event.poster_url, alt: event.name %>
   <div class="event_brief">
     <h1><%= link_to event.name, event %></h1>
-    <p><%= event.hold_date %></p>
-    <p><%= event.location %></p>
-    <p><%= truncate(event.detail, length: 80, seperator: ' ') %></p>
-    <p><%= link_to event.enrolments.count, event_path(event, anchor:"enrolments") %>人报名，已提交<%= link_to event.topics.count, event_path(event, anchor:"topics") %>个话题。</p>
+    <p>举办日期：<%= event.hold_date %></p>
+    <p>举办地点：<%= event.location %></p>
+    <p>活动简介：<%= truncate strip_tags(event.detail), length: 80, seperator: ' ' %></p>
+    <p>
+      当前有<%= link_to event.enrolments.count, event_path(event, anchor:"enrolments") %>人报名
+      <%= link_to "我要报名", new_event_enrolment_path(event) %>
+    </p>
+    <p>
+      已提交<%= link_to event.topics.count, event_path(event, anchor:"topics") %>个话题
+      <%= link_to "提交话题", new_event_topic_path(event) %>
+    </p>
   </div>
 </div>

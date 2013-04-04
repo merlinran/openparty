@@ -12,24 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "活动名称" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :hold_date %><br />
+    <%= f.label :hold_date, "举办日期" %><br />
     <%= f.text_field :hold_date, {class: 'datepicker'} %>
   </div>
   <div class="field">
-    <%= f.label :location %><br />
+    <%= f.label :location, "举办地点" %><br />
     <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :poster_url %><br />
+    <%= f.label :poster_url, "活动海报" %><br />
     <%= f.text_field :poster_url %>
   </div>
   <div class="field">
-    <%= f.label :detail %><br />
-    <%= f.text_area :detail %>
+    <%= f.label :detail, "活动详情" %><br />
+    <%= f.kindeditor :detail, :simple_mode => true %>
   </div>
   <div class="actions">
     <%= f.submit %>

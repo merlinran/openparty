@@ -8,17 +8,23 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require jquery.ui.datepicker
  *= require_self
  *= require_tree .
- *= require jquery.ui.datepicker
  */
 
-* {
-  box-sizing: border-box;
+header {
+  background-color: hsl(200,30%,80%);
+  border-radius: 5px;
+  margin: 5px 0;
+  padding .5em;
+}
+
+header a {
+  text-decoration: none;
 }
 
 #wrapper {
-  width: 90%;
   max-width: 1200px;
   min-width: 640px;
   position: relative;
@@ -26,33 +32,35 @@
 }
 
 #mainNav {
-  overflow: auto;
-  background-color: hsl(200,30%,80%);
-}
-
-#mainNav li, aside li {
-  list-style-type: none;
-}
-
-#mainNav > li > a, aside > li > a {
   float: left;
-  font-size: 2em;
-  padding: .5em;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: hsl(200,30%,80%);
+  border-radius: 5px;
+}
+
+header a:hover, #mainNav a:hover {
+  background-color: hsl(200,30%,20%);
+}
+
+#mainNav li {
+  list-style: none;
+  float: left;
+}
+
+#mainNav > li > a {
   text-decoration: none;
+  padding: 0 .5em;
+  font-size: 2em;
+}
+
+#mainNav > li:last-child {
+  float: right;
 }
 
 #userNav {
-  width: 150px;
-  float: right;
-}
-
-#userNav:hover {
-}
-
-#userMenu {
-  display:none;
   position: relative;
-  float: right;
 }
 
 .avatar {
@@ -60,13 +68,21 @@
   height: 32px;
 }
 
-article img {
-  box-shadow: 6px 6px 6px silver;
+#userMenu {
+  display:none;
+  position: absolute;
+  top: 2em;
+  margin: 0;
+  padding: 0;
+  background-color: hsl(200,30%,80%);
 }
 
-aside {
-  position: fixed;
-  top: 200px;
+#content {
+  clear: both;
+}
+
+article img {
+  box-shadow: 6px 6px 6px silver;
 }
 
 footer {
