@@ -1,7 +1,8 @@
 class User < OmniAuth::Identity::Models::ActiveRecord
   attr_accessible :name, :email, :password, :password_confirmation, :avatar_url, :authentications_attributes
   has_many :authentications, :dependent => :delete_all
-  has_many :enrolments
+  has_many :enrolments, :dependent => :delete_all
+  has_many :topics, :dependent => :delete_all
   accepts_nested_attributes_for :authentications
 
   auth_key :name

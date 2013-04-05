@@ -15,10 +15,16 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rspec-rails'
 #  gem 'debugger'
 #  gem 'linecache19'
 #  gem 'ruby-debug-base19x'
 #  gem 'ruby-debug19', :require => 'ruby-debug'
+end
+
+group :test do
+  gem 'guard-rspec'
+  gem 'guard-spork'
 end
 
 group :production do
