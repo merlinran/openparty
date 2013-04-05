@@ -5,11 +5,18 @@ class ApplicationController < ActionController::Base
   before_filter :ensure_logged_in
 
   private
+  def ensure_is_admin
+    unless current_user.is_admin?
+      redirect_to request.referer || root_url, notice: "需要管理员身份"
+    end
+  end
+
   def ensure_logged_in
     unless logged_in?
       redirect_to login_url, notice: "请先登录"
     end
   end
+
   def logged_in?
     !!current_user  
   end

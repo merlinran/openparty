@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   skip_before_filter :ensure_logged_in, only: [ :index, :show ]
+  before_filter :ensure_is_admin, except: [ :index, :show ]
 
   def index
     @pending_events = Event.pending_events;

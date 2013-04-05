@@ -23,6 +23,10 @@ class User < OmniAuth::Identity::Models::ActiveRecord
     self[:avatar_url] || "http://railscasts.com/assets/icons/rss-04cb962054caa957a6fa3924c48594d8.png"
   end
 
+  def is_admin?
+    role == "admin"
+  end
+
   class << self
     def from_auth(auth)
       locate_auth(auth) || locate_name(auth) || create_auth(auth)

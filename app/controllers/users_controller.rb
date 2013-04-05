@@ -1,5 +1,7 @@
 # encoding: utf-8
 class UsersController < ApplicationController
+  skip_before_filter :ensure_logged_in, only: [:new, :create]
+
   def new
     @user = env['omniauth.identity'] || User.new
   end
