@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1><%= @event.name %></h1>
 
 <%= image_tag @event.poster_url, alt: @event.name %>
@@ -15,7 +13,7 @@
 </p>
 
 <article id="eventDetail">
-  <%= sanitize @event.detail %>
+<%= sanitize @event.detail %>
 </article>
 <div id="enrolments">
   <%= render @event.enrolments %>
@@ -27,6 +25,7 @@
 
 <div id="topics">
   <%= render @event.topics %>
+  <input type=button value="提交话题" id="new_topic_btn"></input>
   <div id="new_topic_form">
     <%= render 'topics/form' %>
   </div>

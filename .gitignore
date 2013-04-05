@@ -14,5 +14,6 @@
 /log/*.log
 /tmp
 /vendor
+/public/uploads/*
 *.gem
 *.bak

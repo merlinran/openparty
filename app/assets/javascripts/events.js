@@ -7,4 +7,9 @@ $(function() {
     $('#enrol_btn').click(function() {
       $('#enrol_form').dialog('open');
     });
+
+    $('#new_topic_form').dialog({autoOpen: false});
+    $('#new_topic_btn').click(function() {
+      $('#new_topic_form').dialog('open');
+    });
   });
