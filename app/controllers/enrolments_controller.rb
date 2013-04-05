@@ -1,7 +1,6 @@
 class EnrolmentsController < ApplicationController
   def create
-    @event = Event.find(params[:event_id])
-    @enrolment = @event.enrolments.new(params[:enrolment])
+    @enrolment = current_user.enrolments.new(event_id: params[:event_id])
     respond_to do |format|
       if @enrolment.save
         format.js

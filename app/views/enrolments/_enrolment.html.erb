@@ -1,2 +1,6 @@
-<a href="mailto:<%= enrolment.email %>"><%= enrolment.nickname %></a>于<%= enrolment.created_at %>报名
-<blockquote><%= enrolment.comment %></blockquote>
+<div class="enrolment">
+<% user = enrolment.user %>
+<%= image_tag user.avatar_url, class: "avatar" %>
+<br/><span><%= user.name %></span>
+</div>
+

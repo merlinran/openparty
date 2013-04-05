@@ -15,18 +15,18 @@
 <article id="eventDetail">
 <%= sanitize @event.detail %>
 </article>
+
 <div id="enrolments">
-  <%= render @event.enrolments %>
-  <input type=button value="我要报名" id="enrol_btn"></input>
-  <div id="enrol_form">
-    <%= render 'enrolments/form' %>
-  </div>
+  <% render @event.enrolments %>
 </div>
+<%= form_for [@event, @event.enrolments.build], remote: true do |f| %>
+  <%= f.submit '我要报名' %>
+<% end %>
 
 <div id="topics">
   <%= render @event.topics %>
-  <input type=button value="提交话题" id="new_topic_btn"></input>
-  <div id="new_topic_form">
-    <%= render 'topics/form' %>
-  </div>
+</div>
+<input type=button value="提交话题" id="new_topic_btn"></input>
+<div id="new_topic_form">
+  <%= render 'topics/form' %>
 </div>
