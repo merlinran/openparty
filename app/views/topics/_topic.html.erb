@@ -1,5 +1,5 @@
 <hgroup>
-  <%= topic.submitter %>提交</a>于<%= topic.created_at %>:
+  <%= topic.user.name %>提交</a>于<%= topic.created_at %>:
   <h2><%= topic.name %></h2>
   <blockquote><%= topic.detail %></blockquote>
 </hgroup>

@@ -15,7 +15,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'debugger'
+#  gem 'debugger'
 #  gem 'linecache19'
 #  gem 'ruby-debug-base19x'
 #  gem 'ruby-debug19', :require => 'ruby-debug'

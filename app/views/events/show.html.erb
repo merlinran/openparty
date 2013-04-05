@@ -17,16 +17,17 @@
 </article>
 
 <div id="enrolments">
-  <% render @event.enrolments %>
+  <ul>
+    <%= render @event.enrolments %>
+  </ul>
+  <%= form_for [@event, @event.enrolments.build], remote: true do |f| %>
+    <%= f.submit '我要报名' %>
+  <% end %>
 </div>
-<%= form_for [@event, @event.enrolments.build], remote: true do |f| %>
-  <%= f.submit '我要报名' %>
-<% end %>
 
 <div id="topics">
   <%= render @event.topics %>
-</div>
-<input type=button value="提交话题" id="new_topic_btn"></input>
-<div id="new_topic_form">
-  <%= render 'topics/form' %>
+  <div id="new_topic_form">
+    <%= render 'topics/form' %>
+  </div>
 </div>

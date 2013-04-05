@@ -39,12 +39,11 @@ ActiveRecord::Schema.define(:version => 20130405091220) do
   end
 
   create_table "topics", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
     t.string   "name"
-    t.string   "submitter"
-    t.string   "poster_url"
     t.integer  "estimated_minutes"
     t.string   "detail"
-    t.integer  "event_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end

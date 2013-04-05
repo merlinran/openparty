@@ -1,5 +1,7 @@
 # encoding: utf-8
 class SessionsController < ApplicationController
+  skip_before_filter :ensure_logged_in
+
   def new
   end
 

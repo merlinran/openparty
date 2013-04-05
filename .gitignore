@@ -15,5 +15,6 @@
 /tmp
 /vendor
 /public/uploads/*
+/public/assets/*
 *.gem
 *.bak

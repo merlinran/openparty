@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
   def create
     @event = Event.find(params[:event_id])
-    @topic = @event.topics.new(params[:topic])
+    @topic = @event.topics.new(params[:topic].merge(user_id: current_user.id))
     respond_to do |format|
       if @topic.save
         format.js

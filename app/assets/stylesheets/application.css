@@ -17,7 +17,7 @@ header {
   background-color: hsl(200,30%,80%);
   border-radius: 5px;
   margin: 5px 0;
-  padding .5em;
+  padding: 0.5em;
 }
 
 header a {
@@ -66,6 +66,8 @@ header a:hover, #mainNav a:hover {
 .avatar {
   width: 32px;
   height: 32px;
+  box-shadow: none;
+  border-radius: 5px;
 }
 
 #userMenu {
@@ -79,6 +81,9 @@ header a:hover, #mainNav a:hover {
 
 #content {
   clear: both;
+  border: solid 2px silver;
+  padding: 5px;
+  box-shadow: 1px 1px 1px silver;
 }
 
 article img {
@@ -86,7 +91,7 @@ article img {
 }
 
 footer {
-  padding-top: 50px;
   clear: both;
   text-align: center;
+  border-top: solid 2px silver;
 }
