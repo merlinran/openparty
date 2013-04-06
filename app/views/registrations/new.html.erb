@@ -1,0 +1,26 @@
+<%= form_for @registration do |f| %>
+  <div class="field">
+    <%= f.label :name, "你愿意大家怎么称呼你？" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field hidden" id="registration_email_div">
+    <%= f.label :email, "你的电子邮箱是？" %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field hidden">
+  <p>如果愿意，请留下其它的网络联系方式：</p>
+    <%= f.label :weibo, "新浪微博" %><br />
+    <%= f.text_field :weibo %>
+  </div>
+  <div class="field hidden">
+    <%= f.label :qq, "QQ号码" %><br />
+    <%= f.text_field :qq %>
+  </div>
+  <div class="field hidden">
+    <%= f.label :intro, "可以简单介绍一下你自己吗？" %><br />
+    <%= f.text_area :intro %>
+  </div>
+  <div class="actions hidden">
+    <%= f.submit "好了，就这么多吧"%>
+  </div>
+<% end %>
