@@ -12,13 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require kindeditor
-//= require jquery.ui.datepicker
-//= require jquery.ui.datepicker-zh-CN
 $(function() {
   $('img').each(function(){ this.title = this.alt; });
-
-  $('.datepicker').datepicker();
 
   $('#userNav').hover(function(){ $('#userMenu').slideToggle(5); });
 });

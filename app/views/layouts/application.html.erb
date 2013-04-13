@@ -14,11 +14,9 @@
     <div id="wrapper">
 
       <header>
-      <hgroup>
       <h1><a href="/">重庆Open Party</a></h1>
       <p>Open Party，本着自由、开放、分享、互动的宗旨，采用“非会议（Unconference）”的形式，为参与者提供一个平等、自由的分享与获取知识的平台。
         无分行业、领域、年龄，只要有一颗乐于分享，热情求知的心，您就是我们的一员。</p>
-      </hgroup>
       </header>
 
       <ul id="mainNav">
@@ -26,8 +24,7 @@
         <li><a href="/events">活动</a></li>
         <li><a href="/records">记录</a></li>
         <li><a href="/checkin">签到</a></li>
-        <li><a href="/contact">联系</a></li>
-        <li><a href="/about">关于</a></li>
+        <li><a href="/about.html">关于</a></li>
         <li><%= render partial: 'layouts/user_nav' %></li>
       </ul>
 
@@ -52,6 +49,6 @@
       <a href="http://validator.w3.org/check?uri=referer">XHTML Validator</a>
     </p>
     </footer>
-
+    <%= render partial: 'layouts/google_analytics' %>
   </body>
 </html>

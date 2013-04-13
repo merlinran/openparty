@@ -10,10 +10,10 @@ class User < OmniAuth::Identity::Models::ActiveRecord
   validates :name, :presence => true, :uniqueness => true
   validates :email, :uniqueness => true
   #validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :alow_blank => true
-  validates :avatar_url, :format => { 
-    :with => %r{\.(gif|jpg|png)$}i,
-    :message => 'must be a URL for GIF, JPG or PNG image.'
-  }
+  #validates :avatar_url, :format => { 
+  #  :with => %r{\.(gif|jpg|png)$}i,
+  #  :message => 'must be a URL for GIF, JPG or PNG image.'
+  #}
 
   def add_auth(auth)
     authentications.create(:provider => auth[:provider],

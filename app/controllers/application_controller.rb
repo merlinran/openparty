@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   private
   def ensure_is_admin
-    unless current_user.is_admin?
+    unless current_user.admin?
       redirect_to request.referer || root_url, notice: "需要管理员身份"
     end
   end
