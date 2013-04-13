@@ -21,14 +21,18 @@
   <ul>
     <%= render @event.enrolments %>
   </ul>
-  <%= form_for [@event, @event.enrolments.build], remote: true do |f| %>
-    <%= f.submit '我要报名' %>
+  <% if @event.pending_event? %>
+    <%= form_for [@event, @event.enrolments.build], remote: true do |f| %>
+      <%= f.submit '我要报名' %>
+    <% end %>
   <% end %>
 </div>
 
 <div id="topics">
   <%= render @event.topics %>
-  <div id="new_topic_form">
-    <%= render 'topics/form' %>
-  </div>
+  <% if @event.pending_event? %>
+    <div id="new_topic_form">
+      <%= render 'topics/form' %>
+    </div>
+  <% end %>
 </div>
