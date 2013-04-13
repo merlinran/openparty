@@ -83,6 +83,7 @@ header a:hover, #mainNav a:hover {
 }
 
 #content {
+  padding-top: 20px;
   clear: both;
 }
 
