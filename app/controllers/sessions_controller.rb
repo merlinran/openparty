@@ -3,6 +3,8 @@ class SessionsController < ApplicationController
   skip_before_filter :ensure_logged_in
 
   def new
+    debugger
+    session[:referer] = request.referer
   end
 
   def create
@@ -12,12 +14,12 @@ class SessionsController < ApplicationController
       user = User.from_auth(auth_hash)
     end
     session[:user_id] = user.id
-    redirect_to root_url
+    redirect_to session[:referer] || root_url
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url
+    redirect_to session[:referer] || root_url
   end
 
   def failure

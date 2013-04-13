@@ -13,7 +13,8 @@ OpenParty::Application.routes.draw do
   resource :user, :only => [:edit, :update, :destroy]
   get "/signup", to: "users#new", as: :signup
 
-  resources :registrations, only: [:new, :create, :index]
+  resources :registrations, only: [:create]
+  get "/checkin", to: "registrations#new", as: :checkin
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

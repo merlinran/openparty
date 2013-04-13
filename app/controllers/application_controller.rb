@@ -1,7 +1,7 @@
 # encoding: utf-8
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :logged_in?, :current_user
+  helper_method :logged_in?, :current_user, :admin?
   before_filter :ensure_logged_in
 
   private
@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     !!current_user  
+  end
+
+  def admin?
+    current_user && current_user.admin?
   end
 
   def current_user  

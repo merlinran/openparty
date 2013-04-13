@@ -1,5 +1,5 @@
 <h1><%= @event.name %></h1>
-<span><%= link_to "修改", edit_event_path if current_user.is_admin? %></span>
+<span><%= link_to "修改", edit_event_path if admin? %></span>
 
 <%= image_tag @event.poster_url, alt: @event.name %>
 

@@ -8,8 +8,11 @@
     })*/
 $(function() {
     $('#new_registration input, #new_registration textarea').each(function() {
+      $(this).focusin(function() {
+        $(this).parent().addClass("current")
+        })
       $(this).focusout(function() {
-        $(this).parent().next().first().fadeIn("slow")
+        $(this).parent().removeClass("current")
         })
       })
 

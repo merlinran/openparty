@@ -1,11 +1,30 @@
-// Place all the styles related to the Registrations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-#new_registration .hidden {
-  display: none;
+form {
+  padding-top: 50px;
+  text-align: center;
 }
 
-#new_registration div:first {
-  display: block;
+.field {
+  border: solid 1px silver;
+  box-shadow: 2px 2px 2px silver;
+  width: 40%;
+  margin: 20px auto;
+  padding: 10px;
+  overflow: auto;
+}
+
+.field_with_errors {
+  color: red;
+}
+
+.actions {
+  font-size: 2em;
+}
+
+.current {
+  background-color: silver;
+  -webkit-transform: scale(1.5, 1.5);
+  -ms-transform: scale(1.5, 1.5);
+  -moz-transform: scale(1.5, 1.5);
+  transform: scale(1.5, 1.5);
 }
 

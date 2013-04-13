@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require kindeditor
-//= require_tree .
 //= require jquery.ui.datepicker
 //= require jquery.ui.datepicker-zh-CN
 $(function() {

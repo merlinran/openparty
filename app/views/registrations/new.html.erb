@@ -1,26 +1,38 @@
 <%= form_for @registration do |f| %>
-  <div class="field">
+  <% if @registration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @registration.errors.count %> 个错误导致无法签到：</h2>
+
+      <ul>
+      <% @registration.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field current">
     <%= f.label :name, "你愿意大家怎么称呼你？" %><br />
     <%= f.text_field :name %>
   </div>
-  <div class="field hidden" id="registration_email_div">
+  <div class="field" id="registration_email_div">
     <%= f.label :email, "你的电子邮箱是？" %><br />
     <%= f.text_field :email %>
   </div>
-  <div class="field hidden">
-  <p>如果愿意，请留下其它的网络联系方式：</p>
-    <%= f.label :weibo, "新浪微博" %><br />
+  <div class="field">
+  <p>介意留下其它的网络联系方式吗？比如：</p>
+    <%= f.label :weibo, "新浪微博？" %><br />
     <%= f.text_field :weibo %>
   </div>
-  <div class="field hidden">
-    <%= f.label :qq, "QQ号码" %><br />
+  <div class="field">
+    <%= f.label :qq, "QQ号码？" %><br />
     <%= f.text_field :qq %>
   </div>
-  <div class="field hidden">
+  <div class="field">
     <%= f.label :intro, "可以简单介绍一下你自己吗？" %><br />
-    <%= f.text_area :intro %>
+    <%= f.text_area :intro, rows: 3 %>
   </div>
-  <div class="actions hidden">
+  <div class="actions">
     <%= f.submit "好了，就这么多吧"%>
   </div>
 <% end %>

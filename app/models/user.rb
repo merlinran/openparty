@@ -24,7 +24,7 @@ class User < OmniAuth::Identity::Models::ActiveRecord
     self[:avatar_url] || "http://railscasts.com/assets/icons/rss-04cb962054caa957a6fa3924c48594d8.png"
   end
 
-  def is_admin?
+  def admin?
     role == "admin"
   end
 

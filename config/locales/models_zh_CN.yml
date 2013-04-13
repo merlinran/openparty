@@ -1,0 +1,9 @@
+zh_CN:
+  activerecord:
+    models:
+      registration: "签到"
+    attributes:
+        registration:
+          email: "电子邮箱"
+          name: "名称"
+
