@@ -5,6 +5,7 @@ class CreateRegistrations < ActiveRecord::Migration
       t.string :email
       t.string :weibo
       t.string :qq
+      t.string :douban
       t.text :intro
       t.string :user_id
 

@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
   skip_before_filter :ensure_logged_in
 
   def new
-    debugger
     session[:referer] = request.referer
   end
 
@@ -20,6 +19,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     redirect_to session[:referer] || root_url
+
   end
 
   def failure

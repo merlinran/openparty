@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20130406153011) do
     t.string   "email"
     t.string   "weibo"
     t.string   "qq"
+    t.string   "douban"
     t.text     "intro"
     t.string   "user_id"
     t.datetime "created_at", :null => false

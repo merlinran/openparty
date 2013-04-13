@@ -7,12 +7,12 @@
     $('#registration_email').focus
     })*/
 $(function() {
-    $('#new_registration input, #new_registration textarea').each(function() {
+    $('#new_registration input[type=text], #new_registration textarea').each(function() {
       $(this).focusin(function() {
-        $(this).parent().addClass("current")
+        $(this).closest(".field").addClass("current")
         })
       $(this).focusout(function() {
-        $(this).parent().removeClass("current")
+        $(this).closest(".field").removeClass("current")
         })
       })
 

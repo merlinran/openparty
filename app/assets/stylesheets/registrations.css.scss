@@ -1,30 +1,58 @@
 form {
-  padding-top: 50px;
+  padding-top: 20px;
   text-align: center;
 }
 
-.field {
-  border: solid 1px silver;
+.field, #error_explanation {
+  border: solid 1px hsl(0, 0%, 90%);
   box-shadow: 2px 2px 2px silver;
-  width: 40%;
+  width: 32%;
   margin: 20px auto;
-  padding: 10px;
-  overflow: auto;
+  padding: 10px 0;
 }
 
-.field_with_errors {
-  color: red;
+.field input, .field textarea {
+  width: 80%;
 }
 
-.actions {
-  font-size: 2em;
+.actions input {
+  margin: 0 auto 20px auto;
+  font-size: 1.5em;
 }
 
 .current {
-  background-color: silver;
+  background-color: hsl(0, 0%, 90%);
   -webkit-transform: scale(1.5, 1.5);
   -ms-transform: scale(1.5, 1.5);
   -moz-transform: scale(1.5, 1.5);
   transform: scale(1.5, 1.5);
 }
 
+.field_with_errors {
+  color: red;
+}
+
+.notice {
+  color: green;
+}
+
+#error_explanation {
+  padding-top: 0;
+  background-color: hsl(0, 0%, 90%);
+  text-align: left;
+}
+
+#error_explanation h2 {
+  font-size: 1em;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  margin: 0;
+  background-color: red;
+  color: white;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  color: red;
+  list-style: none;
+}
