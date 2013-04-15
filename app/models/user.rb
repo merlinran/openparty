@@ -8,12 +8,12 @@ class User < OmniAuth::Identity::Models::ActiveRecord
   auth_key :name
 
   validates :name, :presence => true, :uniqueness => true
-  validates :email, :uniqueness => true
-  #validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :alow_blank => true
-  #validates :avatar_url, :format => { 
+  validates :email, :uniqueness => true, :allow_blank => true
+  validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :allow_blank => true
+  # validates :avatar_url, :format => { 
   #  :with => %r{\.(gif|jpg|png)$}i,
   #  :message => 'must be a URL for GIF, JPG or PNG image.'
-  #}
+  #}, :allow_blank => true
 
   def add_auth(auth)
     authentications.create(:provider => auth[:provider],

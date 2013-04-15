@@ -11,4 +11,9 @@ class TopicsController < ApplicationController
       end
     end
   end
+
+  def show
+    @event = Event.find(params[:event_id])
+    @topic = @event.topics.find(params[:id])
+  end
 end

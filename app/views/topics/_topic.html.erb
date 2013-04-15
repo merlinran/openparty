@@ -1,5 +1,3 @@
-<hgroup>
-  <%= topic.user.name %>提交</a>于<%= topic.created_at %>:
-  <h3><%= topic.name %></h3>
-  <blockquote><%= topic.detail %></blockquote>
-</hgroup>
+<div class="topic">
+  <%= link_to topic.name, event_topic_url(topic.event, topic) %>
+</div>

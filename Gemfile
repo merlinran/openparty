@@ -16,7 +16,7 @@ end
 
 group :development do
   gem 'rspec-rails'
-  gem 'debugger'
+#  gem 'debugger'
 end
 
 group :test do
@@ -48,6 +48,7 @@ gem "omniauth-github"
 gem "omniauth-google-oauth2"
 gem 'omniauth-weibo-oauth2'
 gem 'omniauth-qq-connect'
+gem 'omniauth-douban-oauth2' 
 gem 'omniauth-identity'
 gem 'bcrypt-ruby', '~> 3.0.0'
 

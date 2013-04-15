@@ -5,4 +5,10 @@
 
 $('.datepicker').datepicker();
 
-
+$(function() {
+  $('.error-message').live("load", function() {
+      window.setInterval(function() {
+        $('.error-message').empty()
+        }, 1000)
+      })
+});
