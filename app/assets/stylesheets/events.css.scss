@@ -6,9 +6,9 @@ section {
   overflow: auto;
 };
 
-#past_events {
-  margin-top: 2em;
-  border-top: solid red 2px;
+#past_events h2 {
+  margin-top: 1em;
+  border-bottom: solid red 2px;
 };
 
 .event {
