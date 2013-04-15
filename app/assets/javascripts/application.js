@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.datepicker
+//= require jquery.ui.datepicker-zh-CN
+
 $(function() {
   $('img').each(function(){ this.title = this.alt; });
 

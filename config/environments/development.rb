@@ -34,4 +34,7 @@ OpenParty::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # always user newest css and js even if precompiled assets exist
+  config.serve_static_assets = false
 end
