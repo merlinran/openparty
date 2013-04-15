@@ -26,7 +26,6 @@ header {
 header a, #mainNav a {
   text-decoration: none;
   color: hsl(200,30%,20%);
-/* rgb(85, 26, 139); */
 }
 
 #wrapper {
@@ -53,7 +52,7 @@ header a:hover, #mainNav a:hover {
   float: left;
 }
 
-#mainNav > li > a {
+#mainNav > li a {
   padding: 0 .5em;
   font-size: 2em;
 }
@@ -64,6 +63,7 @@ header a:hover, #mainNav a:hover {
 
 #userNav {
   position: relative;
+  min-width: 8em;
 }
 
 .avatar {
@@ -76,7 +76,8 @@ header a:hover, #mainNav a:hover {
 #userMenu {
   display:none;
   position: absolute;
-  top: 2em;
+  font-size: .5em;
+  top: 4.5em;
   margin: 0;
   padding: 0;
   background-color: hsl(200,30%,80%);
