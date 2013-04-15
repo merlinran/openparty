@@ -7,15 +7,14 @@
     <%= label_tag :password, "密码" %><br>
     <%= password_field_tag :password %>
   </div>
-  <div class="actions"><%= submit_tag "登录" %></div>
-  <a href="/signup">新用户注册</a>
+  <div class="actions"><%= submit_tag "登录" %><a href="/signup">新用户注册</a></div>
 <% end %>
 
 <ul id="login_menu">
-  <li><a href="/auth/weibo">新浪微博登录</a></li>
-  <li><a href="/auth/qq_connect">腾讯登录</a></li>
-  <li><a href="/auth/douban">豆瓣登录</a></li>
-  <li><a href="/auth/google_oauth2">Google登录</a></li>
-  <li><a href="/auth/github">Github登录</a></li>
+  <li><a id="weibo" href="/auth/weibo">新浪微博登录</a></li>
+  <li><a id="douban" href="/auth/douban">豆瓣登录</a></li>
+  <li><a id="qq" href="/auth/qq_connect">QQ登录</a></li>
+  <li><a id="google" href="/auth/google_oauth2">Google登录</a></li>
+  <li><a id="github" href="/auth/github">Github登录</a></li>
 </ul>
 

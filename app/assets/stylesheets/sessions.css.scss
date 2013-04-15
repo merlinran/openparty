@@ -1,3 +1,53 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+form {
+  float: left;
+  padding: 11px 10px;
+  background-color: hsl(200,30%,92%);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#login_menu {
+  background-color: hsl(200,30%,92%);
+  border-radius: 0 0 5px 5px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 0 0 50px;
+  list-style-type: none;
+  float: left;
+  line-height: 1.5em;
+}
+
+#login_menu li {
+  width: 200px;
+}
+
+#login_menu li a {
+  display: block;
+  text-indent: 16px;
+  background-repeat: no-repeat;
+}
+
+#qq {
+  background-image: url(qq.png)
+}
+
+#weibo {
+  background-image: url(weibo.png)
+}
+
+#douban {
+  background-image: url(douban.png)
+}
+
+#google {
+  background-image: url(google.png)
+}
+
+#github {
+  background-image: url(github.png)
+}
+
+
