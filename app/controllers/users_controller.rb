@@ -7,6 +7,12 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(params[:user])
+    if @user.save
+      redirect_to root_url
+    else
+      render action: "new"
+    end
   end
 
   def edit
@@ -14,15 +20,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    uploaded_io = params[:user][:avatar]
-    file_full_path = File.join('uploads', uploaded_io.original_filename)
-    File.open(Rails.root.join('public', file_full_path), 'wb') do |file|
-      file.write(uploaded_io.read)
+    @user = current_user
+    @user.update_by_hash(params[:user])
+    if @user.errors.any?
+      render action: "edit"
+    else
+      redirect_to root_url
     end
-    current_user.update_attributes(
-      params[:user].except(:avatar).merge(avatar_url: '/' + file_full_path.to_s))
-
-    redirect_to root_url
   end
 
   def destroy

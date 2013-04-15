@@ -10,10 +10,8 @@ class User < OmniAuth::Identity::Models::ActiveRecord
   validates :name, :presence => true, :uniqueness => true
   validates :email, :uniqueness => true, :allow_blank => true
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :allow_blank => true
-  # validates :avatar_url, :format => { 
-  #  :with => %r{\.(gif|jpg|png)$}i,
-  #  :message => 'must be a URL for GIF, JPG or PNG image.'
-  #}, :allow_blank => true
+  validates_length_of :password, minimum: 6
+  validates_confirmation_of :password
 
   def add_auth(auth)
     authentications.create(:provider => auth[:provider],
@@ -26,6 +24,27 @@ class User < OmniAuth::Identity::Models::ActiveRecord
 
   def admin?
     role == "admin"
+  end
+
+  def update_by_hash(user_hash)
+    self.update_attributes(user_hash.slice(*[:name, :email]))
+    self.update_attributes(save_avatar(user_hash[:avatar]))
+    y user_hash[:password]
+    unless user_hash[:password].blank?
+      self.update_attributes(user_hash.slice(*[:password, :password_confirmation]))
+    end
+  end
+
+  private
+
+  def save_avatar(uploaded_io)
+    if uploaded_io
+      file_full_path = File.join('uploads', uploaded_io.original_filename)
+      File.open(Rails.root.join('public', file_full_path), 'wb') do |file|
+        file.write(uploaded_io.read)
+        return { avatar_url: '/' + file_full_path.to_s }
+      end
+    end
   end
 
   class << self
@@ -57,7 +76,6 @@ class User < OmniAuth::Identity::Models::ActiveRecord
             :provider => auth[:provider],
             :uid => auth[:uid])
       end
-
     end
   end
 end
