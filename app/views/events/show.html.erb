@@ -1,7 +1,6 @@
-<h1><%= @event.name %></h1>
-<span><%= link_to "修改", edit_event_path if admin? %></span>
+<h2><%= @event.name %></h2><%= link_to "修改", edit_event_path if admin? %>
 
-<%= image_tag @event.poster_url, alt: @event.name %>
+<%= image_tag @event.poster_url, alt: @event.name, class: "poster" %>
 
 <p>
   <b>举办时间:</b>
@@ -18,17 +17,23 @@
 </article>
 
 <div id="enrolments">
+  <h2>报名列表</h2>
   <ul>
     <%= render @event.enrolments %>
   </ul>
   <% if @event.pending_event? %>
     <%= form_for [@event, @event.enrolments.build], remote: true do |f| %>
-      <%= f.submit '我要报名' %>
+      <% if !logged_in? %>
+        <p>报名请先<%= link_to "登录", login_url %></p>
+      <% elsif !@event.enrolments.find_by_user_id(current_user) %>
+        <%= f.submit '我要报名' %>
+      <% end %>
     <% end %>
   <% end %>
 </div>
 
 <div id="topics">
+  <h2>已提交话题</h2>
   <%= render @event.topics %>
   <% if @event.pending_event? %>
     <div id="new_topic_form">

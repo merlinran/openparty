@@ -1,5 +1,5 @@
 <% if @enrolment.errors.empty? %>
   $('<%= escape_javascript(render @enrolment) %>').appendTo($('#enrolments ul'));
 <% else %>
-  $('<span class="error-message"><%= escape_javascript(@enrolment.errors.full_messages.join(',')) %></span>').appendTo($('#new_enrolment'))
+  $('<p class="error-message"><%= escape_javascript(@enrolment.errors.full_messages.join(',')) %></p>').insertBefore($('#new_enrolment'))
 <% end %>
