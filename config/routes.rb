@@ -4,13 +4,14 @@ OpenParty::Application.routes.draw do
     resources :enrolments
     resources :topics
   end
+  resources :records
 
   match "/auth/:provider/callback", to: "sessions#create"
   match "/auth/failure", to: "sessions#new"
   get "/login", to: "sessions#new", as: :login
   get "/logout", to: "sessions#destroy", as: :logout
 
-  resource :user, :only => [:edit, :update, :destroy]
+  resources :users, :only => [:show, :edit, :update, :destroy]
   get "/signup", to: "users#new", as: :signup
 
   resources :registrations, only: [:create]

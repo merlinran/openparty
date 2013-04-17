@@ -1,0 +1,11 @@
+<h2><%= @record.title %></h2>
+<p>
+  <span>作者：<%= link_to @record.user.name, @record.user %></span>
+  <span>关联活动：<%= link_to @record.event.name, @record.event %></span>
+</p>
+<p>
+<%= @record.text %>
+</p>
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Back', records_path %>

@@ -1,9 +1,14 @@
 zh_CN:
   activerecord:
     models:
+      event: "活动"
       registration: "签到"
+      record: "记录"
     attributes:
         registration:
           email: "电子邮箱"
           name: "名称"
-
+        record:
+          event_id: "活动"
+          title: "标题"
+          text: "内容"
