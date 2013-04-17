@@ -43,6 +43,7 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'rails_kindeditor', '~> 0.3.14'
+gem 'exception_notification'
 
 gem "omniauth-github"
 gem "omniauth-google-oauth2"
