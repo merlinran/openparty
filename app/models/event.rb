@@ -25,4 +25,8 @@ class Event < ActiveRecord::Base
     past_events.select("name, id").collect { |e| e.attributes.values }
   end
 
+  def self.current_event
+    pending_events.last
+  end
+
 end
