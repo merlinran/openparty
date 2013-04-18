@@ -1,4 +1,6 @@
 zh_CN:
+  social_share_button:
+    share_to: 分享到%{name}
   date:
     abbr_day_names:
     - 日

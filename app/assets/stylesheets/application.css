@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require jquery.ui.datepicker
+ *= require social-share-button
  *= require_self
  */
 
@@ -96,4 +97,8 @@ footer {
   clear: both;
   text-align: center;
   border-top: solid 2px silver;
+}
+
+.social-share-button {
+  float: right;
 }
