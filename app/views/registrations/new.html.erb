@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+  <h2><%= link_to @registration.event.name, @registration.event %>签到</h2>
   <div class="field">
     <strong><%= f.label :name, "你愿意大家怎么称呼你？" %></strong><br />
     <%= f.text_field :name %>
