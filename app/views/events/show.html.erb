@@ -1,5 +1,6 @@
-<h2><%= @event.name %></h2><%= link_to "修改", edit_event_path if admin? %>
-
+<h2><%= @event.name %></h2>
+<%= social_share_button_tag(@event.name) %>
+<%= link_to "修改", edit_event_path if admin? %>
 <%= image_tag @event.poster_url, alt: @event.name, class: "poster" %>
 
 <p>
@@ -41,3 +42,10 @@
     </div>
   <% end %>
 </div>
+
+<% if @event.past_event? %>
+  <div id="records">
+  <h2>已提交话题</h2>
+    <%= render @event.records %>
+  </div>
+<% end %>

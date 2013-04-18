@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.ui.datepicker
 //= require jquery.ui.datepicker-zh-CN
+//= require social-share-button
 
 $(function() {
   $('img').each(function(){ this.title = this.alt; });

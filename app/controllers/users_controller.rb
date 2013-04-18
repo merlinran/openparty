@@ -2,6 +2,10 @@
 class UsersController < ApplicationController
   skip_before_filter :ensure_logged_in, only: [:new, :create]
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   def new
     @user = env['omniauth.identity'] || User.new
   end

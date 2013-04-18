@@ -1,0 +1,11 @@
+<h2><%= @record.title %></h2>
+<%= social_share_button_tag(@record.title) %>
+<p>
+  <span>作者：<%= @record.user.name %></span>
+  <span>关联活动：<%= link_to @record.event.name, @record.event %></span>
+</p>
+<p>
+<%= raw @record.text %>
+</p>
+
+<%= link_to 'Edit', edit_record_path(@record) if @record.user == current_user %>

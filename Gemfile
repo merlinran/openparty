@@ -16,7 +16,7 @@ end
 
 group :development do
   gem 'rspec-rails'
-#  gem 'debugger'
+  gem 'debugger'
 end
 
 group :test do
@@ -43,6 +43,7 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'rails_kindeditor', '~> 0.3.14'
+gem 'social-share-button'
 
 gem "omniauth-github"
 gem "omniauth-google-oauth2"
