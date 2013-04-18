@@ -4,12 +4,14 @@
       <h2>囧，签到失败</h2>
 
       <ul>
-      <% @registration.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @registration.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
+  <%= f.hidden_field :user_id %>
+  <%= f.hidden_field :event_id %>
   <h2><%= link_to @registration.event.name, @registration.event %>签到</h2>
   <div class="field">
     <strong><%= f.label :name, "你愿意大家怎么称呼你？" %></strong><br />
@@ -19,7 +21,7 @@
     <strong><%= f.label :email, "你的电子邮箱是？" %></strong><br />
     <%= f.text_field :email %>
   </div>
-    <p>有其它的网络联系方式吗？比如：</p>
+  <p>有其它的网络联系方式吗？比如：</p>
   <div class="field">
     <%= f.label :weibo, "新浪微博？" %><br />
     <%= f.text_field :weibo %>
