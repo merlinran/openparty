@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :event_id %><br />
-    <%= f.select :event_id, options_for_select(@event_names) %>
+    <%= f.select :event_id, options_from_collection_for_select(Event.past_events, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :title %><br />
@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :text %><br />
-    <%= f.text_area :text %>
+    <%= f.kindeditor :text%>
   </div>
   <div class="actions">
     <%= f.submit %>

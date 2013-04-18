@@ -27,7 +27,6 @@ class RecordsController < ApplicationController
   # GET /records/new.json
   def new
     @record = Record.new
-    @event_names = Event.past_event_names
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,14 +36,13 @@ class RecordsController < ApplicationController
 
   # GET /records/1/edit
   def edit
-    @record = Record.find(params[:id])
+    @record = current_user.records.find(params[:id])
   end
 
   # POST /records
   # POST /records.json
   def create
     @record = current_user.records.new(params[:record])
-    @event_names = Event.past_event_names
 
     respond_to do |format|
       if @record.save
