@@ -3,7 +3,7 @@ class RegistrationsController < ApplicationController
   skip_before_filter :ensure_logged_in
 
   def new
-    @registration = Event.current_event.registrations.new
+    @registration = Event.current_event.registrations.new(user_id: current_user)
   end
 
   def create
