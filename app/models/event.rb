@@ -2,6 +2,8 @@ class Event < ActiveRecord::Base
   has_many :enrolments, :dependent => :delete_all
   has_many :topics, :dependent => :delete_all
   has_many :records, :dependent => :delete_all
+  has_many :registrations, :dependent => :delete_all
+
 
   validates_presence_of :name, :hold_date, :location, :poster_url, :detail;
 
