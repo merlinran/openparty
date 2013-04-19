@@ -1,28 +1,8 @@
-<h1>Listing records</h1>
-
-<table>
-  <tr>
-    <th>User</th>
-    <th>Title</th>
-    <th>Text</th>
-    <th>Event</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @records.each do |record| %>
-  <tr>
-    <td><%= record.user_id %></td>
-    <td><%= record.title %></td>
-    <td><%= record.text %></td>
-    <td><%= record.event_id %></td>
-    <td><%= link_to 'Show', record %></td>
-    <td><%= link_to 'Edit', edit_record_path(record) if @record.user == current_user %></td>
-    <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } if @record.user == current_user %></td>
-  </tr>
+  <h2><%= link_to record.title, record %></h2>
+  <p><%= record.user.name %>发表于<%= record.created_at %></p>
+  <p>相关活动：<%= link_to record.event.name, record.event %></p>
 <% end %>
-</table>
 
 <br />
 
