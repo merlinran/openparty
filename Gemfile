@@ -16,7 +16,7 @@ end
 
 group :development do
   gem 'rspec-rails'
-#  gem 'debugger'
+  gem 'debugger'
 end
 
 group :test do
@@ -25,7 +25,7 @@ group :test do
 end
 
 group :production do
-  gem 'mysql2'
+  gem 'pg'
 end
 
 # Gems used only for assets and not required
@@ -45,6 +45,7 @@ gem 'jquery-ui-rails'
 gem 'rails_kindeditor', '~> 0.3.14'
 gem 'social-share-button'
 gem 'exception_notification'
+gem 'surveyor'
 
 gem "omniauth-github"
 gem "omniauth-google-oauth2"

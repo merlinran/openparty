@@ -1,0 +1,14 @@
+# encoding: UTF-8
+title: "xxx"
+survey_sections:
+  one:
+    title: "一"
+question_groups:
+  hello:
+    text: "您好"
+questions:
+  name:
+    text: "你的姓名？"
+    answers:
+      name:
+        help_text: "我的名字叫…"
