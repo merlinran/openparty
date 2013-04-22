@@ -3,6 +3,7 @@ class RegistrationsController < ApplicationController
   skip_before_filter :ensure_logged_in
 
   def new
+    render text: "请等待下次活动" and return if !Event.current_event
     @registration = Event.current_event.registrations.new(user_id: current_user)
   end
 
@@ -16,7 +17,7 @@ class RegistrationsController < ApplicationController
         format.html { render :action => "new" }
       end
     end
- 
+
   end
 
   def index
