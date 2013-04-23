@@ -34,8 +34,12 @@ h2 {
 }
 
 .past_event {
-  width: 24%;
+  width: 29%;
   padding: 0 20px;
+}
+
+.past_event:nth-child(3n+2) {
+  clear: left;
 }
 
 .past_event img {
