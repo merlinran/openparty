@@ -11,6 +11,9 @@
 <% end %>
 
 <ul id="login_menu">
+  <% unless Rails.env.production? %>
+    <li><a id="weibo" href="/auth/developer">Developer</a></li>
+  <% end %>
   <li><a id="weibo" href="/auth/weibo">新浪微博登录</a></li>
   <li><a id="douban" href="/auth/douban">豆瓣登录</a></li>
   <li><a id="qq" href="/auth/qq_connect">QQ登录</a></li>

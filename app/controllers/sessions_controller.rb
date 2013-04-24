@@ -7,6 +7,8 @@ class SessionsController < ApplicationController
   end
 
   def create
+    p request.env['omniauth.auth'].to_yaml
+    debugger
     if auth_hash[:provider] == "identity"
       user = User.find(auth_hash[:uid])
     else
