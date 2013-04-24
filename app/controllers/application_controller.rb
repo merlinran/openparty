@@ -1,4 +1,3 @@
-# encoding: utf-8
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :logged_in?, :current_user, :admin?
@@ -7,13 +6,13 @@ class ApplicationController < ActionController::Base
   private
   def ensure_is_admin
     unless current_user.admin?
-      redirect_to request.referer || root_url, notice: "需要管理员身份"
+      redirect_to request.referer || root_url, notice: I18n.t(:admin_required)
     end
   end
 
   def ensure_logged_in
     unless logged_in?
-      redirect_to login_url, notice: "请先登录"
+      redirect_to login_url, notice: I18n.t(:please_login)
     end
   end
 
