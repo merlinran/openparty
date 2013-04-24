@@ -1,11 +1,11 @@
 # encoding: UTF-8
-survey "重庆OpenParty参与度调查", :default_mandatory => false do
+survey "重庆OpenParty参与度调查", :default_mandatory => true do
 
   section "基础问题" do
-    q "你所属的行业和专业？"
+    q "简单介绍你的行业和专业？"
     a :string
 
-    q "你有哪些主要的兴趣爱好？"
+    q "你主要的兴趣爱好？"
     a :string
 
     q "你是从什么渠道得知OpenParty的？", pick: :one
@@ -15,12 +15,28 @@ survey "重庆OpenParty参与度调查", :default_mandatory => false do
     a "其它", :string
 
     q_1 "你参加过哪几期活动？", :pick => :any
-    Event.all.each { |e| a I18n.l(e.hold_date, format: :long) + '---' + e.name }
+    Event.order("updated_at desc").each { |e| a I18n.l(e.hold_date, format: :long) + '\t' + e.name }
 
-    q "是什么让你在这么多中选择参加OpenParty？"
+    q "业余活动那么多，是什么吸引你选择参加OpenParty？"
     dependency :rule => "A"
     condition_A :q_1, "count>0"
-    a :string
+    a :text
+
+    q "你参加过的OpenParty在哪些方面符合或超出预期？"
+    dependency :rule => "A"
+    condition_A :q_1, "count>0"
+    a :text
+
+    q "你对OpenParty不满意的地方？"
+    dependency :rule => "A"
+    condition_A :q_1, "count>0"
+    a :text
+
+    q "你希望OpenParty网站发挥什么作用？"
+    a :text
+
+    q "其它建议？"
+    a :text
 
   end
 end
