@@ -6,3 +6,22 @@
 *= require surveyor/results
 *= require surveyor
 */
+.text {
+  height: 8em;
+}
+
+.string, .text{
+  width: 40em;
+}
+
+span.title {
+  display: none;
+}
+
+.surveyor_menu {
+  display: none;
+}
+
+#surveyor fieldset.q_default {
+  margin-top: 1em;
+}
