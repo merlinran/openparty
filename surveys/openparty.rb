@@ -28,7 +28,7 @@ survey "重庆OpenParty参与者问卷调查", :default_mandatory => true do
     a "其它", :string
 
     q_1 "您参加过哪几期活动？", :pick => :any
-    Event.order("updated_at desc").each { |e| a I18n.l(e.hold_date, format: :long) + " --- " + e.name }
+    Event.order("hold_date desc").each { |e| a I18n.l(e.hold_date, format: :long) + " --- " + e.name }
 
     group "未参加过活动，请回答以下问题" do
       dependency :rule => "A"
