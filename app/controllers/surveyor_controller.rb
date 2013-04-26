@@ -4,6 +4,7 @@ module SurveyorControllerCustomMethods
     # base.send :before_filter, :require_user   # AuthLogic
     # base.send :before_filter, :login_required  # Restful Authentication
     # base.send :layout, 'application' #'surveyor_custom'
+    base.send :skip_before_filter, :ensure_logged_in
   end
 
   # Actions

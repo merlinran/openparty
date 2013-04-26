@@ -12,14 +12,7 @@ describe RegistrationsController do
   describe "POST 'create'" do
     it "returns http success" do
       post 'create'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'index'" do
-    it "returns http success" do
-      get 'index'
-      response.should be_success
+      response.should redirect_to(checkin_url)
     end
   end
 
