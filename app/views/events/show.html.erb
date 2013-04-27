@@ -45,7 +45,9 @@
 
 <% if @event.past_event? %>
   <div id="records">
-  <h2>已提交话题</h2>
+  <h2>活动记录</h2>
     <%= render @event.records %>
   </div>
 <% end %>
+
+<%= render template: "/layouts/_uyan.html" %>
