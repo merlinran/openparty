@@ -1,4 +1,5 @@
 <h2><%= @record.title %></h2>
+<%= link_to '修改', edit_record_path(@record) if @record.user == current_user %>
 <%= social_share_button_tag(@record.title) %>
 <p>
   <span>作者：<%= @record.user.name %></span>
@@ -8,4 +9,5 @@
 <%= raw @record.text %>
 </p>
 
-<%= link_to 'Edit', edit_record_path(@record) if @record.user == current_user %>
+<%= render template: "/layouts/_uyan.html" %>
+
