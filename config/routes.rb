@@ -1,5 +1,7 @@
 OpenParty::Application.routes.draw do
 
+  get "/about", to: "miscellaneous#about", as: :about
+
   resources :events, :except => :destroy do
     resources :enrolments
     resources :topics
