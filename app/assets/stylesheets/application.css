@@ -21,7 +21,12 @@ header {
   background-color: hsl(200,30%,92%);
   border-radius: 0 0 5px 5px;
   margin: 0 0 5px 0;
-  padding: 0.5em;
+  padding: 1rem;
+}
+
+header h1 {
+  display: inline;
+  padding-right: 2rem;
 }
 
 header a, #mainNav a {
@@ -53,9 +58,9 @@ header a:hover, #mainNav a:hover {
   float: left;
 }
 
-#mainNav > li a {
-  padding: 0 .5em;
-  font-size: 2em;
+#mainNav > li > a {
+  padding: 0 1rem;
+  font-size: 2rem;
 }
 
 #mainNav > li:last-child {
@@ -63,8 +68,8 @@ header a:hover, #mainNav a:hover {
 }
 
 #userNav {
+  min-width: 6rem;
   position: relative;
-  min-width: 8em;
 }
 
 .avatar {
@@ -75,13 +80,18 @@ header a:hover, #mainNav a:hover {
 }
 
 #userMenu {
+  width: 6rem;
   display:none;
   position: absolute;
-  font-size: .5em;
-  top: 4.5em;
+  top: 2rem;
   margin: 0;
   padding: 0;
   background-color: hsl(200,30%,80%);
+}
+
+#userMenu li {
+  clear: right;
+  float: right;
 }
 
 #content {
