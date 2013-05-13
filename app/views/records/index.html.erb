@@ -1,6 +1,6 @@
 <% @records.each do |record| %>
   <h2><%= link_to record.title, record %></h2>
-  <p><%= record.user.name %>发表于<%= record.created_at %></p>
+  <p><%= record.user.name %>发表于<%= I18n.l(record.created_at, format: :long) %></p>
   <p>相关活动：<%= link_to record.event.name, record.event %></p>
 <% end %>
 
