@@ -1,6 +1,6 @@
 <h2><%= @event.name %></h2>
 <%= social_share_button_tag(@event.name) %>
-<%= link_to "修改", edit_event_path if admin? %>
+<%= link_to "修改", edit_event_path(@event) if admin? %>
 <%= image_tag @event.poster_url, alt: @event.name, class: "poster" %>
 
 <p>
@@ -50,4 +50,4 @@
   </div>
 <% end %>
 
-<%= render template: "/layouts/_uyan.html" %>
+<%= render template: "/layouts/_uyan" %>

@@ -5,14 +5,14 @@ class ApplicationController < ActionController::Base
 
   private
   def ensure_is_admin
-    unless current_user.admin?
-      redirect_to request.referer || root_url, notice: I18n.t(:admin_required)
+    unless admin?
+      redirect_to request.referer || root_url, error: I18n.t(:admin_required)
     end
   end
 
   def ensure_logged_in
     unless logged_in?
-      redirect_to login_url, notice: I18n.t(:please_login)
+      redirect_to login_url, error: I18n.t(:please_login)
     end
   end
 
